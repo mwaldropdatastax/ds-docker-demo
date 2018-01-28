@@ -26,6 +26,7 @@ https://hub.docker.com/r/datastax/dse-studio/
 5) Create a folder to place the docker-compose.yml and the init.sh into.
 
 6) I created a script to does a little house keeping to make things easier.  It creates the necessary mount folders to persist data outside the docker containers, and also gives you a place to access and update config files easily.  To launch the demo environment, simply execute the script:
+
 	./init.sh
 
 7) Once everything is running, you can connect to Opscenter using the url:
