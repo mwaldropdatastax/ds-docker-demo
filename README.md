@@ -6,7 +6,9 @@ I may do some additional tweaking to the script over time to simplify other comm
 
 REFERENCES:
 https://store.docker.com/images/datastax?tab=description
+
 https://hub.docker.com/r/datastax/dse-opscenter/
+
 https://hub.docker.com/r/datastax/dse-studio/
 
 
