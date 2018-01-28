@@ -1,0 +1,56 @@
+version: '2'
+networks:
+  default:
+    external:
+      name: demo
+services:
+  node:
+    image: "store/datastax/dse-server:5.1.5"
+    environment:
+      - DS_LICENSE=accept
+    command: 
+     -k
+     -s
+     -g
+    # Allow DSE to lock memory with mlock
+    cap_add:
+    - IPC_LOCK
+    ulimits:
+      memlock: -1
+    ports:
+    - "22:22"
+    - "4040:4040"
+    - "7080:7080"
+    - "7199:7199"
+    - "8182:8182"
+    - "8983:8983"
+    - "9042:9042"
+    volumes:
+    - ./data:/var/lib/cassandra/data
+    - ./conf:/config
+    - ./logs:/var/lib/cassandra/commit_logs
+    - ./cache:/var/lib/cassandra/saved_caches
+    container_name: "dse"
+
+  opscenter:
+    image: "datastax/dse-opscenter"
+    environment:
+      - DS_LICENSE=accept
+    volumes:
+    - ./conf/opscenter:/config
+    - ./opscenter:/var/lib/opscenter
+    - ./opscenter-clusters:/opt/opscenter/conf/clusters
+    ports:
+    - "8888:8888"
+    container_name: "opscenter"
+
+  studio:
+    image: "datastax/dse-studio"
+    environment:
+      - DS_LICENSE=accept
+    volumes:
+    - ./studio:/var/lib/datastax-studio
+    - ./conf/studio:/config
+    ports:
+    - "9091:9091"
+    container_name: "studio"
