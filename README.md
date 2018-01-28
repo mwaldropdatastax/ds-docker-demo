@@ -1,4 +1,8 @@
-I've just started playing here, so I'm not really sure how well this will work.  Here's my path so far:
+My goal here was very simple.  I wanted an environment for my laptop where I could easily test, destroy, and otherwise play based with the Docker dev images.  The entire purpose if this effort was to Keep It Simple !  There are lots of advanced techniques if this was intended for "the real world".  My world is a demo world, and reality is merely a concept in this world.
+
+Therefore, it is a single docker-compose file, a single node, a fair amount of hackery to deal with the basics, etc.  THIS IS NOT TO BE CONSIDERED A REAL WORLD EXAMPLE, BEST PRACTICE, OR SUGGESTED PATH.  Just simple and functional.
+
+I may do some additional tweaking to the script over time to simplify other common things, but to use this example, you will need a fairly functional knowledge of Docker and all of it's concepts to make effective use of the environment.  However, this gives a great head start.
 
 REFERENCES:
 https://store.docker.com/images/datastax?tab=description
@@ -30,4 +34,3 @@ connect to the existing cluster using the service name 'dse' as the hostname
 set the connection using the service name 'dse' as the hostname
 
 All the basics seem to be working and I'm just starting to validate more functionality.  
-
