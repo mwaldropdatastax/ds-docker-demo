@@ -24,9 +24,10 @@ docker login
 ```
     docker pull store/datastax/dse-server:5.1.5
 
-    docker pull datastax/dse-opscenter
+		docker pull datastax/dse-opscenter
 
 		docker pull datastax/dse-studio
+		
 ```
 5) Create a folder to place the docker-compose.yml and the init.sh into.
 
