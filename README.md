@@ -16,19 +16,18 @@ https://hub.docker.com/r/datastax/dse-studio/
 
 1) Download and install Docker on the Mac.
 2) Go to https://store.docker.com/ and register an ID.  You must authenticate using an ID to download the DSE image.
-3) Login to the docker store
+3) Login to the docker store (enter credentials created in step 2)
 
 	docker login
 
-        (enter credentials created in step 2)
 4) Pull the 3 docker images (DSE, Opscenter, Studio)
 
-	      docker pull store/datastax/dse-server:5.1.5
+        docker pull store/datastax/dse-server:5.1.5
 
         docker pull datastax/dse-opscenter
 
         docker pull datastax/dse-studio
-				
+
 5) Create a folder to place the docker-compose.yml and the init.sh into.
 
 6) I created a script to does a little house keeping to make things easier.  It creates the necessary mount folders to persist data outside the docker containers, and also gives you a place to access and update config files easily.  To launch the demo environment, simply execute the script:
