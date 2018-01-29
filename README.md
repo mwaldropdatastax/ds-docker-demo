@@ -22,7 +22,6 @@ docker login
 ```
 4) Pull the 3 docker images (DSE, Opscenter, Studio)
 ```
-
     docker pull store/datastax/dse-server:5.1.5
 
     docker pull datastax/dse-opscenter
