@@ -4,9 +4,12 @@ Therefore, it is a single docker-compose file, a single node, a fair amount of h
 
 I may do some additional tweaking to the script over time to simplify other common things, but to use this example, you will need a fairly functional knowledge of Docker and all of it's concepts to make effective use of the environment.  However, this gives a great head start.
 
-*** Note:  You will notice in the docker-compose.yml there is an external network defined.  This is required to workaround a Docker issue that prevents proper functionality because of the default behavior of using underscores in the service names.  That is why the init.sh script checks and creates an external Docker network on startup, to avoid this issue.  If it looks like a hack, it's because it is a hack.  Unfortunately at this point, it seems to be the most common workaround for this Docker issue.
+#### Note:  
+
+>You will notice in the docker-compose.yml there is an external network defined.  This is required to workaround a Docker issue that prevents proper functionality because of the default behavior of using underscores in the service names.  That is why the init.sh script checks and creates an external Docker network on startup, to avoid this issue.  If it looks like a hack, it's because it is a hack.  Unfortunately at this point, it seems to be the most common workaround for this Docker issue.
 
 REFERENCES:
+
 https://store.docker.com/images/datastax?tab=description
 
 https://hub.docker.com/r/datastax/dse-opscenter/
@@ -33,7 +36,7 @@ docker pull datastax/dse-studio
 
 6) I created a script to does a little house keeping to make things easier.  It creates the necessary mount folders to persist data outside the docker containers, and also gives you a place to access and update config files easily.  To launch the demo environment, simply execute the script:
 ```
-	./init.sh
+./init.sh
 ```
 7) Once everything is running, you can connect to Opscenter using the url:
 	http://localhost:8888/
