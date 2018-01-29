@@ -8,7 +8,7 @@ I may do some additional tweaking to the script over time to simplify other comm
 
 >You will notice in the docker-compose.yml there is an external network defined.  This is required to workaround a Docker issue that prevents proper functionality because of the default behavior of using underscores in the service names.  That is why the init.sh script checks and creates an external Docker network on startup, to avoid this issue.  If it looks like a hack, it's because it is a hack.  Unfortunately at this point, it seems to be the most common workaround for this Docker issue.
 
-REFERENCES:
+#### REFERENCES:
 
 https://store.docker.com/images/datastax?tab=description
 
