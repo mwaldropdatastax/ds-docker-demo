@@ -8,7 +8,7 @@ I may do some additional tweaking to the script over time to simplify other comm
 
 >You will notice in the docker-compose.yml there is an external network defined.  This is required to workaround a Docker issue that prevents proper functionality because of the default behavior of using underscores in the service names.  That is why the init.sh script checks and creates an external Docker network on startup, to avoid this issue.  If it looks like a hack, it's because it is a hack.  Unfortunately at this point, it seems to be the most common workaround for this Docker issue.
 
-#### REFERENCES:
+#### References:
 
 https://store.docker.com/images/datastax?tab=description
 
@@ -16,9 +16,12 @@ https://hub.docker.com/r/datastax/dse-opscenter/
 
 https://hub.docker.com/r/datastax/dse-studio/
 
+#### Install:
 
-1) Download and install Docker on the Mac.
+1) Download and install Docker on the Mac.  I haven't tested on a PC, but should work in a similar way.  I suppose the script would need some attention.
+
 2) Go to https://store.docker.com/ and register an ID.  You must authenticate using an ID to download the DSE image.
+
 3) Login to the docker store (enter credentials created in step 2)
 ```
 docker login
