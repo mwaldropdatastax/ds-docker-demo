@@ -24,34 +24,32 @@ https://hub.docker.com/r/datastax/dse-studio/
 
 1) Download and install Docker on the Mac.  I haven't tested on a PC, but should work in a similar way.  I suppose the script would need some attention.
 
-2) Go to https://store.docker.com/ and register an ID.  You must authenticate using an ID to download the DSE image.
-
-3) Login to the docker store (enter credentials created in step 2)
+2) Pull the 3 docker images (DSE, Opscenter, Studio)
 ```
-docker login
-```
-4) Pull the 3 docker images (DSE, Opscenter, Studio)
-```
-docker pull store/datastax/dse-server:5.1.5
+docker pull datastax/dse-server
 
 docker pull datastax/dse-opscenter
 
 docker pull datastax/dse-studio
 
 ```
-5) Create a folder to place the docker-compose.yml and the init.sh into.
+3) Create a folder to place the docker-compose.yml and the init.sh into.
 
-6) I created a script to does a little house keeping to make things easier.  It creates the necessary mount folders to persist data outside the docker containers, and also gives you a place to access and update config files easily.  To launch the demo environment, simply execute the script:
+4) I created a script to does a little house keeping to make things easier.  It creates the necessary mount folders to persist data outside the docker containers, and also gives you a place to access and update config files easily.  To launch the demo environment, simply execute the script:
 ```
 ./init.sh
 ```
-7) Once everything is running, you can connect to Opscenter using the url:
+5) Once everything is running, you can connect to Opscenter using the url:
 	http://localhost:8888/
 
 connect to the existing cluster using the service name 'dse' as the hostname
 
-8) Launch studio using the URL:
+6) Launch studio using the URL:
 	http://localhost:9091
 set the connection using the service name 'dse' as the hostname
+
+7) You can use the config.sh script to copy a few of the key initial config files to the config directory that is mounted to the host OS (./config).  This makes it easier to just jump in and make tweaks to common files like dse.yaml, cassandra.yaml, etc.  If the config file you need is not there, don't worry.  Just connect to the running container, copy the config file you want to modify to the /conf directory within the image, and then when you look at the mounted ./config directory on the host - you can modify that config file.
+
+>Again note:  This is not a typical production implementation pattern.  This is for "quick and dirty" demo and development environments really.
 
 All the basics seem to be working and I'm just starting to validate more functionality.  
