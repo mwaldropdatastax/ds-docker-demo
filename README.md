@@ -4,6 +4,10 @@ Therefore, it is a single docker-compose file, a single node, a fair amount of h
 
 I may do some additional tweaking to the script over time to simplify other common things, but to use this example, you will need a fairly functional knowledge of Docker and all of it's concepts to make effective use of the environment.  However, this gives a great head start.
 
+
+#### Update:
+I've updated everything to grab the latest code based on the DSE 6 release.  I've also added a new script titled "init.sh" that sets up the initial copies of the config files from within the images to the mounted host volume config.  This allows you to quickly jump into to some of the common config files to make changes for a new demo environment.
+
 #### Note:  
 
 >You will notice in the docker-compose.yml there is an external network defined.  This is required to workaround a Docker issue that prevents proper functionality because of the default behavior of using underscores in the service names.  That is why the init.sh script checks and creates an external Docker network on startup, to avoid this issue.  If it looks like a hack, it's because it is a hack.  Unfortunately at this point, it seems to be the most common workaround for this Docker issue.

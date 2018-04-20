@@ -5,10 +5,10 @@ networks:
       name: demo
 services:
   node:
-    image: "store/datastax/dse-server:5.1.5"
+    image: "datastax/dse-server"
     environment:
       - DS_LICENSE=accept
-    command: 
+    command:
      -k
      -s
      -g
@@ -32,6 +32,7 @@ services:
     - ./cache:/var/lib/cassandra/saved_caches
     container_name: "dse"
 
+
   opscenter:
     image: "datastax/dse-opscenter"
     environment:
@@ -43,6 +44,7 @@ services:
     ports:
     - "8888:8888"
     container_name: "opscenter"
+
 
   studio:
     image: "datastax/dse-studio"
