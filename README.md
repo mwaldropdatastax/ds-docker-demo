@@ -24,7 +24,7 @@ https://hub.docker.com/r/datastax/dse-studio/
 
 1) Download and install Docker on the Mac.  I haven't tested on a PC, but should work in a similar way.  I suppose the script would need some attention.
 
-2) Pull the 3 docker images (DSE, Opscenter, Studio)
+2) *Optional* Just doing the docker up will automaticall pull the docker images, but you can also explicitly pull them if you like.  (DSE, Opscenter, Studio)
 ```
 docker pull datastax/dse-server
 
