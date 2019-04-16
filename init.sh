@@ -14,18 +14,13 @@ if [ ! -d "./conf" ]; then
    mkdir conf
 fi
 
-if [ ! -d "./conf/opscenter" ]; then
-   mkdir conf/opscenter
-fi
-
 if [ ! -d "./conf/studio" ]; then
    mkdir conf/studio
 fi
 
-if [ ! -d "./data" ]; then
-   mkdir data
+if [ ! -d "./opscenter" ]; then
+   mkdir opscenter
 fi
-
 
 if [ ! -d "./logs" ]; then
    mkdir logs
